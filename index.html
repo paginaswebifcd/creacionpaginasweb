@@ -1,16 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <title>Página principal</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Presentación del Curso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f3f4f6;
+      color: #111827;
+    }
+    header {
+      background: linear-gradient(135deg, #6366f1, #3b82f6);
+      color: white;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+    header p {
+      margin-top: .5rem;
+      font-size: 1.2rem;
+    }
+    nav {
+      background: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    nav a {
+      text-decoration: none;
+      color: #3b82f6;
+      font-weight: 600;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    h2 {
+      margin-top: 0;
+      color: #374151;
+      font-size: 1.8rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Presentación del Curso</h1>
+    <p>Bienvenid@ a mi página de introducción del curso y recursos sobre GitHub</p>
+  </header>
 
-  <body>
-    <p>Hola mundo!</p>
-    <p>Esto es una prueba para ver como funciona github</p>
-  </body>
+  <nav>
+    <a href="#curso">Sobre el Curso</a>
+    <a href="#github">GitHub</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <div class="container" id="curso">
+    <h2>Sobre el Curso</h2>
+    <p>En este curso aprenderás los fundamentos esenciales, herramientas y conceptos clave para dominar el desarrollo de proyectos modernos. Aquí se presentarán contenidos, recursos y enlaces relevantes que te ayudarán a lo largo de tu aprendizaje.</p>
+  </div>
+
+  <div class="container" id="github">
+    <h2>GitHub</h2>
+    <p>GitHub es una plataforma fundamental para gestionar proyectos, colaborar con otros desarrolladores y llevar un control completo del versionado de tu código.</p>
+    <ul>
+      <li>Repositorios</li>
+      <li>Commits y ramas</li>
+      <li>Pull requests</li>
+      <li>Issues y proyectos</li>
+    </ul>
+  </div>
+
+  <div class="container" id="contacto">
+    <h2>Contacto</h2>
+    <p>Si deseas más información o tienes preguntas, ¡no dudes en escribirme!</p>
+  </div>
+
+  <footer>
+    © 2025 Mi Página de Presentación - Todos los derechos reservados
+  </footer>
+</body>
 </html>
