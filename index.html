@@ -15,7 +15,7 @@
     gtag('js', new Date());
 
     gtag('config', 'G-08M921C4VV');
-    
+
   </script>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -83,6 +83,25 @@
       margin-top: 3rem;
       color: #6b7280;
     }
+
+    #cookie-banner {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #222;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      z-index: 9999;
+    }
+
+    #cookie-banner button {
+      padding: 8px 15px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -98,7 +117,10 @@
     <a href="#github">GitHub</a>
     <a href="#contacto">Contacto</a>
   </nav>
-
+  <div id="cookie-banner">
+    Este sitio usa cookies de analítica.
+    <button id="acceptCookies">Aceptar</button>
+  </div>
   <div class="container" id="curso">
     <h2>Sobre el Curso</h2>
     <p>En este curso aprenderás los fundamentos esenciales, herramientas y conceptos clave para dominar el desarrollo de
@@ -126,6 +148,46 @@
   <footer>
     © 2025 Mi Página de Presentación - Todos los derechos reservados
   </footer>
+  <script>
+    /* ---- MÉTODOS PARA COOKIES ---- */
+    function setCookie(name, value, days) {
+      let expires = "";
+      if (days) {
+        const d = new Date();
+        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + d.toUTCString();
+      }
+      document.cookie = name + "=" + value + expires + "; path=/";
+    }
+    function getCookie(name) {
+      const v = "; " + document.cookie;
+      const p = v.split("; " + name + "=");
+      if (p.length === 2) return p.pop().split(";").shift();
+    }
+
+    /* ---- MOSTRAR BANNER ---- */
+    if (!getCookie("cookieConsent")) {
+      document.getElementById("cookie-banner").style.display = "block";
+    }
+
+    /* ---- HABILITAR ANALYTICS AL ACEPTAR ---- */
+    document.getElementById("acceptCookies").onclick = function () {
+      setCookie("cookieConsent", "yes", 365);
+      document.getElementById("cookie-banner").style.display = "none";
+
+      // Cargar Google Analytics dinámicamente
+      let ga = document.createElement("script");
+      ga.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX";
+      document.head.appendChild(ga);
+
+      ga.onload = function () {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-08M921C4VV');
+      };
+    };
+  </script>
 </body>
 
 </html>
